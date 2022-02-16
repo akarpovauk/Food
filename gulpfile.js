@@ -1,11 +1,10 @@
-const gulp        = require('gulp');
+const gulp = require("gulp");
 const webpack = require("webpack-stream");
-const sass        = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require("autoprefixer");
+const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
-const browserSync = require('browser-sync');
-
+const browsersync = require("browser-sync");
 
 const dist = "./dist";
 
@@ -14,7 +13,6 @@ gulp.task("copy-html", () => {
                 .pipe(gulp.dest(dist))
                 .pipe(browsersync.stream());
 });
-
 
 gulp.task("build-js", () => {
     return gulp.src("./src/js/main.js")
